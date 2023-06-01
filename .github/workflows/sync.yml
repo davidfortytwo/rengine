@@ -1,10 +1,9 @@
+# Version: v1.3.7
 # Your GitHub Actions workflow
 name: Sync Repositories
-
 on:
   push:
     branches: [ main ]
-
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -12,10 +11,9 @@ jobs:
       - name: Checkout Source Repo
         uses: actions/checkout@v2
         with:
-          repository: 'yogeshojha/rengine'
+          repository: 'null'
           token: ${{ secrets.YOUR_GITHUB_TOKEN }}
           path: 'rengine'
-
       - name: Sync Repositories
         run: |
           rsync -a --delete ./rengine/ .
